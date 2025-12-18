@@ -5,8 +5,9 @@ function App() {
 
   return (
     <div className="canvas">
-      <div className="main-container">
-        <ResultContainer />
+      <ResultContainer />
+      <div className="summary-container">
+      
       </div>
     </div>
   )

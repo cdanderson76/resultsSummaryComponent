@@ -12,20 +12,23 @@ img {
 .canvas {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100vh;
 }
 
-.main-container {
+.summary-container {
   width: 86%;
-  min-width: 375px;
-  height: 50.56rem;
+  max-width: 375px;
+  height: 453px;
   border: 2px solid black;
+  border-top: none;
 }
 
 .result-container {
-  width: 100%;
+  width: 86%;
+  max-width: 375px;
   height: 356px;
   background-color: hsl(241, 81%, 54%);
   border-radius: 0 0 25px 25px;
@@ -34,10 +37,24 @@ img {
 
 /* TABLET VIEW */
 @media( min-width: 768px ) {
-  .main-container {
-    width: 89.1%;
-    max-width: 736px;
+  .canvas {
+    flex-direction: row;
+  }
+
+  .summary-container {
+    width: 100%;
+    max-width: 348px;
     height: 512px;
     border: 2px solid black;
+    border-left: none;
+  }
+
+  .result-container {
+    width: 338px;
+    width: 24.5%;
+    min-width: 338px;
+    max-width: 368px;
+    height: 512px;
+    border-radius: 25px;
   }
 }
