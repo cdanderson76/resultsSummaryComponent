@@ -1,4 +1,5 @@
-
+import { useEffect } from "react"
+import dotenv from 'dotenv';
 
 function App() {
 
@@ -15,8 +16,27 @@ function ResultContainer() {
 
   return(
     <div className="result-container">
-
+      <ResultList />
     </div>
+  )
+}
+
+function ResultList() {
+
+  const URL = `${import.meta.env.VITE_HOST}/api/results/`
+
+  async function fetchResults() {
+    const resp = await fetch(`${import.meta.env.VITE_HOST}/api/results/`);
+    const data = await resp.json();
+    console.log(data);
+  }
+
+  useEffect(() => {
+    fetchResults();
+  }, [])
+
+  return (
+    <div></div>
   )
 }
 
